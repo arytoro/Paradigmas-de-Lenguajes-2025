@@ -15,6 +15,10 @@ busca([_|Y],Z,L):-busca(Y,Z,L),!.
 
 noGrupoFamiliar:-afiliado(X),miembro(Y,X),grupoFamiliar(Y,Z),longitud(Z,Long),Long is 0, writeln(Y).
 
+/* Esta opción es mejor, no necesita analizar longitud ya que estamos buscando que haga match con una lista vacía
+noGrupoFamiliar:-afiliado(X),miembro(Y,X),grupoFamiliar(Y,[]),writeln(Y).
+*/
+
 miembro(X,[X|_]).
 miembro(X,[_|L]):-miembro(X,L).
 
