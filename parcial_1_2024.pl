@@ -19,6 +19,13 @@ noGrupoFamiliar:-afiliado(X),miembro(Y,X),grupoFamiliar(Y,Z),longitud(Z,Long),Lo
 noGrupoFamiliar:-afiliado(X),miembro(Y,X),grupoFamiliar(Y,[]),writeln(Y).
 */
 
+/*Esta variante es por si piden devolver literalmente una lista, y no listarlos con write*/
+mostrarSinGrupoFamiliar(L):-afiliado(X),sinGrupoFamiliar(X,L).
+sinGrupoFamiliar([],[]).
+sinGrupoFamiliar([X|L],[X|R]):-grupoFamiliar(X,[]),sinGrupoFamiliar(L,R),!.
+sinGrupoFamiliar([_|L1],L2):-sinGrupoFamiliar(L1,L2).
+
+
 miembro(X,[X|_]).
 miembro(X,[_|L]):-miembro(X,L).
 
