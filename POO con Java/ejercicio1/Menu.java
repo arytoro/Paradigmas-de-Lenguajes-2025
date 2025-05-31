@@ -10,8 +10,14 @@ import java.util.Scanner;
  */
 public class Menu {
     private int opcion;
-
+    private Gestor g;
+    
     public Menu(Gestor g){
+        this.opcion=7;
+        this.g=g;
+    }
+            
+    public void MostrarMenu(){
         Scanner scanner = new Scanner(System.in);
 
         do {

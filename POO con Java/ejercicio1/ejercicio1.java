@@ -13,5 +13,6 @@ public class ejercicio1{
     public static void main(String[] args) {
         Gestor g= new Gestor(3); /*Como maximo almacenara 3 viajeros*/
         Menu m= new Menu(g);
+        m.MostrarMenu();
     }
 }
